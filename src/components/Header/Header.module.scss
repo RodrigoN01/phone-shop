@@ -1,0 +1,20 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+
+  &__cart {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &__count {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+}
