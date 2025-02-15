@@ -15,7 +15,13 @@ const Header = () => {
   return (
     <nav className={styles.Header}>
       <Link href='/'>
-        <Image src='/svgs/logo.svg' alt='logo' width={74} height={24} />
+        <Image
+          src='/svgs/logo.svg'
+          alt='logo'
+          width={74}
+          height={24}
+          priority
+        />
       </Link>
       {pathname !== "/cart" && (
         <Link href='/cart' className={styles.Header__cart}>
@@ -28,6 +34,7 @@ const Header = () => {
             alt='bag'
             width={33}
             height={26}
+            priority
           />
           {cartCount > 0 && (
             <span className={styles.Header__cart__count}>{cartCount}</span>
