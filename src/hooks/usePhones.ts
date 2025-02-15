@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { getPhones } from "../services/api";
+import { Phone } from "@/types";
 
 export function usePhones(search?: string) {
-  const [phones, setPhones] = useState([]);
+  const [phones, setPhones] = useState<Phone[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 

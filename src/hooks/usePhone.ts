@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { getPhoneById } from "../services/api";
+import { Phone } from "@/types";
 
 export function usePhone(id: string) {
-  const [phone, setPhone] = useState(null);
+  const [phone, setPhone] = useState<Phone | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
