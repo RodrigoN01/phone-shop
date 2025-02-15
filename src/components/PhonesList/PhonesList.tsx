@@ -1,8 +1,7 @@
 import { Phone } from "@/types";
 import Link from "next/link";
-// import Image from "next/image";
-import styles from "./PhonesList.module.scss";
 import Image from "next/image";
+import styles from "./PhonesList.module.scss";
 
 interface PhonesListProps {
   phones: Phone[];
