@@ -4,6 +4,40 @@ export interface Phone {
   name: string;
   imageUrl: string;
   basePrice: number;
+  rating: number;
+  description: string;
+  colorOptions: [
+    {
+      hexCode: string;
+      imageUrl: string;
+      name: string;
+    }
+  ];
+  storageOptions: [
+    {
+      capacity: string;
+      price: number;
+    }
+  ];
+  specs: {
+    battery: string;
+    mainCamera: string;
+    os: string;
+    processor: string;
+    resolution: string;
+    screen: string;
+    screenRefreshRate: string;
+    selfieCamera: string;
+  };
+  similarProducts: [
+    {
+      id: string;
+      imageUrl: string;
+      name: string;
+      basePrice: number;
+      brand: string;
+    }
+  ];
 }
 
 export interface CartItem extends Phone {
