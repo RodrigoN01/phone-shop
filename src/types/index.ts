@@ -44,13 +44,18 @@ export interface CartItem extends Phone {
   quantity: number;
   selectedColor: string;
   selectedStorage: string;
+  currentPrice: number;
 }
 
 export interface CartContextType {
   cart: CartItem[];
-  addToCart: (phone: Phone, color: string, storage: string) => void;
+  addToCart: (
+    phone: Phone,
+    color: string,
+    storage: string,
+    price: number
+  ) => void;
   removeFromCart: (id: string) => void;
-  clearCart: () => void;
   getCartTotal: () => number;
   getCartCount: () => number;
 }
