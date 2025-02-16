@@ -19,13 +19,19 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (phone: Phone, color: string, storage: string) => {
+  const addToCart = (
+    phone: Phone,
+    color: string,
+    storage: string,
+    price: number
+  ) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find(
         (item) =>
           item.id === phone.id &&
           item.selectedColor === color &&
-          item.selectedStorage === storage
+          item.selectedStorage === storage &&
+          item.storageOptions.find((phone) => phone.price === price)
       );
 
       if (existingItem) {
@@ -43,6 +49,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
           quantity: 1,
           selectedColor: color,
           selectedStorage: storage,
+          currentPrice: price,
         },
       ];
     });
@@ -52,13 +59,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
-  const clearCart = () => {
-    setCart([]);
-  };
-
   const getCartTotal = () => {
     return cart.reduce(
-      (total, item) => total + item.basePrice * item.quantity,
+      (total, item) => total + item.currentPrice * item.quantity,
       0
     );
   };
@@ -73,7 +76,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         cart,
         addToCart,
         removeFromCart,
-        clearCart,
         getCartTotal,
         getCartCount,
       }}
