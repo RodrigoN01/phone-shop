@@ -1,0 +1,16 @@
+.BackButton {
+  position: fixed;
+  top: 67px;
+  width: 100%;
+  padding: 10px 40px;
+  background-color: #fff;
+  z-index: 2;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 3;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
