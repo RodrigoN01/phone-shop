@@ -1,0 +1,128 @@
+.CartPage {
+  padding: 100px 40px 50px;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 40px;
+
+    &__checkout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+      max-width: 500px;
+
+      &__total {
+        text-transform: uppercase;
+      }
+
+      @media (width <= 960) {
+        flex-grow: 1;
+        justify-content: end;
+        gap: 20px;
+      }
+
+      @media (width <= 680px) {
+        flex-grow: 1;
+
+        &__total {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 20px;
+          width: 100%;
+        }
+
+        &__btnContainer {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+          width: 100%;
+        }
+      }
+    }
+
+    button,
+    a {
+      max-width: 350px;
+      flex-grow: 1;
+      flex-basis: 0;
+      flex-shrink: 1;
+      // min-width: 0;
+
+      @media (width <= 960) {
+        max-width: 220px;
+      }
+
+      @media (width <= 680) {
+        font-size: 12px;
+      }
+
+      @media (width <= 380) {
+        font-size: 8px;
+      }
+    }
+
+    @media (width <= 680) {
+      flex-direction: column;
+    }
+  }
+
+  &__phoneDetails {
+    margin: 40px 0;
+    display: flex;
+    gap: 50px;
+
+    &__image {
+      width: 350px;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &__specs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 10px;
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &__price {
+          margin-top: 30px;
+        }
+      }
+
+      &__removeBtn {
+        background: none;
+        border: none;
+        text-align: left;
+        outline: none;
+        color: #df0000;
+        cursor: pointer;
+      }
+    }
+
+    @media (width <= 680) {
+      gap: 10px;
+
+      &__specs {
+        font-size: 14px;
+        min-width: 100px;
+      }
+    }
+  }
+}
