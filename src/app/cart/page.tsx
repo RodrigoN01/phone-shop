@@ -11,8 +11,6 @@ const CartPage = () => {
   const { cart, getCartCount, removeFromCart, getCartTotal } = useCart();
   const cartCount = getCartCount();
 
-  console.log(cart);
-
   if (cart.length === 0) {
     return (
       <section className={styles.CartPage}>
